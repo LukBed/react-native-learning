@@ -1,17 +1,23 @@
-import React from 'react';
-import { Image, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { ScrollView, Text, TextInput, View } from 'react-native';
 
-import Tiger from './src/assets/tiger.jpg';
+const mock = new Array(100)
+  .fill(null)
+  .map((item, idx) => ({ id: `id${idx}`, label: `${idx}. Lorem` }));
 
 export default function App() {
+  const [value, setValue] = useState('');
+
+  //ScrollView is not the best if we have a lot of similar elements - performance!
   return (
     <View>
-      <View style={{ backgroundColor: '#006600' }}>
-        <View style={{ backgroundColor: '#ff0000', width: 50, height: 50 }} />
-        <Text>Hello <Text style={{ fontWeight: 'bold' }} onPress={() => alert('Touched!')}>React Native</Text></Text>
-      </View>
-      <Image source={Tiger} />
-      <Image style={{ width: 50, height: 50}} source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Bundesarchiv_Bild_183-H26258%2C_Panzer_V_%22Panther%22.jpg/480px-Bundesarchiv_Bild_183-H26258%2C_Panzer_V_%22Panther%22.jpg'}} />
+      <Text>{value}</Text>
+      <TextInput value={value} onChangeText={text => setValue(text)} />
+      <ScrollView>
+        {mock.map(item => (
+          <Text key={item.id}>{item.label}</Text>
+        ))}
+      </ScrollView>
     </View>
   );
 }
