@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
-import { ScrollView, Text, TextInput, View } from 'react-native';
-
-const mock = new Array(100)
-  .fill(null)
-  .map((item, idx) => ({ id: `id${idx}`, label: `${idx}. Lorem` }));
+import React from 'react';
+import { Text, Platform, SafeAreaView } from 'react-native';
 
 export default function App() {
-  const [value, setValue] = useState('');
-
-  //ScrollView is not the best if we have a lot of similar elements - performance!
   return (
-    <View>
-      <Text>{value}</Text>
-      <TextInput value={value} onChangeText={text => setValue(text)} />
-      <ScrollView>
-        {mock.map(item => (
-          <Text key={item.id}>{item.label}</Text>
-        ))}
-      </ScrollView>
-    </View>
+    //SafeAreaView - only IOS11+, safe margin, very useful, works as normal view on Android
+    <SafeAreaView>
+      <Text
+        style={{
+          backgroundColor: Platform.OS === 'android' ? 'green' : 'red',
+        }}>
+        {Platform.OS}
+      </Text>
+      <Text
+        style={{
+          ...Platform.select({
+            android: {
+              backgroundColor: 'orange',
+            },
+          }),
+        }}>
+        {Platform.OS}
+      </Text>
+    </SafeAreaView>
   );
 }
