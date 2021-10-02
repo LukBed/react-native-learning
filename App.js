@@ -1,43 +1,43 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
+import styled from 'styled-components/native';
 
-//better performance also!
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
-  paragraph: {
-    backgroundColor: 'grey',
-    color: 'white',
-    margin: 24,
-    fontSize: 18,
-    textAlign: 'center',
-  },
-  nestedText: {
-    fontWeight: 'bold',
-  },
-});
+//web-style, not mobile-style
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+`;
+
+//px needed here
+const Paragraph = styled.Text`
+  background-color: grey;
+  color: white;
+  margin: 24px;
+  font-size: 18px;
+  text-align: center;
+`;
+
+const NestedText = styled.Text`
+  font-weight: bold;
+`;
 
 export default function App() {
   return (
     //RN is based on flexbox, axes are reversed in comparison to web
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.paragraph}>
+    <Container>
+      <Paragraph>
         Mauris pretium in neque in sagittis. Donec accumsan turpis ac lacus
         ullamcorper, in interdum eros hendrerit. Duis eu congue libero. Maecenas
         convallis interdum erat quis euismod.
-        <Text style={styles.nestedText}>
-          Maecenas finibus feugiat venenatis.
-        </Text>
-      </Text>
+        <NestedText>Maces finibus feugiat venenatis.</NestedText>
+      </Paragraph>
       <Text>
         Nunc a aliquam lacus. Aliquam leo quam, feugiat nec fermentum a, iaculis
         eget nisl. Vivamus ut tellus quis velit dictum bibendum. Nulla nec
         consequat turpis. Etiam congue auctor tellus, vel dictum nulla faucibus
         vitae.
       </Text>
-    </SafeAreaView>
+    </Container>
   );
 }
