@@ -5,3 +5,10 @@ yarn add -D eslint-plugin-react-native
 Husky & PrettyQuick
 yarn add -D husky
 yarn add -D pretty-quick
+
+React Intl - i18n
+yarn add react-intl
+
+Refreshing libraries for IOS
+cd ios
+pod install
