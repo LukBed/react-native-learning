@@ -9,6 +9,15 @@ yarn add -D pretty-quick
 React Intl - i18n
 yarn add react-intl
 
-Refreshing libraries for IOS
+React Native Localize (detecting localization)
+yarn add react-native-localize
+
+React Native Async Storage
+yarn add @react-native-async-storage/async-storage
+
+Refreshing libraries for IOS - after every installation
 cd ios
 pod install
+
+Debugger
+cmd/ctl + M
