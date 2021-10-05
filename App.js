@@ -14,7 +14,7 @@ export default function App() {
     <LangModeProvider>
       <LangWrapper>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName={'Home'}>
+          <Stack.Navigator initialRouteName={'OnBoarding'}>
             <Stack.Screen name={'Home'} component={Home} />
             <Stack.Screen name={'OnBoarding'} component={OnBoarding} />
           </Stack.Navigator>
