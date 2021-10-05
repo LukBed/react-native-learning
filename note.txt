@@ -25,5 +25,8 @@ yarn add react-native-screens react-native-safe-area-context
 yarn add @react-navigation/stack //for stack navigation, new view will be on the top of previous one
 yarn add react-native-gesture-handler //without it app can crash on production
 
+Prop Types
+yarn add prop-types
+
 Debugger
 cmd/ctl + M
