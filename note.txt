@@ -19,5 +19,11 @@ Refreshing libraries for IOS - after every installation
 cd ios
 pod install
 
+React Navigation
+yarn add @react-navigation/native
+yarn add react-native-screens react-native-safe-area-context
+yarn add @react-navigation/stack //for stack navigation
+yarn add react-native-gesture-handler //without it app can crash on production
+
 Debugger
 cmd/ctl + M

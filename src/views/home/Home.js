@@ -6,7 +6,7 @@ import * as RNLocalize from 'react-native-localize';
 import { LangContext } from '../../lang/LangProvider';
 import { LANGUAGES } from '../../lang/constants';
 
-export default function HomeView() {
+export default function Home() {
   const [lang, handleChangeLanguage] = useContext(LangContext);
   return (
     <SafeAreaView
